@@ -22,7 +22,7 @@ class Parser_Filter extends Form_Filter_Abstract {
         $jevix = new Parser_Jevix();
 
 //Конфигурация
-        $allowed_tags = array('a', 'img', 'i', 'b', 'u', 'em', 'strong', 'nobr', 'li', 'ol', 'ul', 'sup', 'abbr', 'pre', 'acronym', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'cut', 'user', 'br', 'code', 'p','video');
+        $allowed_tags = array('a', 'img', 'i', 'b', 'u', 'em', 'strong', 'nobr', 'li', 'ol', 'ul', 'sup', 'abbr', 'pre', 'acronym', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'cut', 'user', 'br', 'code', 'p','video','table', 'tbody', 'tr', 'td');
 // 1. Устанавливаем разрешённые теги. (Все не разрешенные теги считаются запрещенными.)
         $jevix->cfgAllowTags($allowed_tags);
 
@@ -41,7 +41,7 @@ class Parser_Filter extends Form_Filter_Abstract {
         $jevix->cfgAllowTagParams('code', array('class'));
         $jevix->cfgAllowTagParams('p', array('align' => array('left', 'right', 'center')));
         $jevix->cfgAllowTagParams('pre', array('class'));
-
+        $jevix->cfgAllowTagParams('b', array('class'));
 
 // 6. Устанавливаем параметры тегов являющиеся обязяательными. Без них вырезает тег оставляя содержимое.
         $jevix->cfgSetTagParamsRequired('img', 'src');
